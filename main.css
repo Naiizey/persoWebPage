@@ -64,21 +64,27 @@ body{
     align-items: center;
 }
 
-
 /* NOM */
 .name{
-    text-decoration: none;
-    font-family: "league_spartan";
-    color: white;
-    font-size: 3.5ex;
-    margin-left: 2ex;
+  text-decoration: none;
+  font-family: "league_spartan";
+  color: white;
+  font-size: 3.5ex;
+  margin-left: 2ex;
 }
 
 
 /* BARRE DE NAVIGATION */
 .nav{
+  padding: 0;
+  margin-left: 20ex;
+}
+
+@media screen and (max-height: 800px){
+  .nav{
     padding: 0;
     margin-left: 5ex;
+  } 
 }
 
 .nav li{
@@ -87,37 +93,6 @@ body{
     margin-left: 5ex;
     text-decoration: none;
     color: white;
-}
-
-
-/* IMAGE D'ACCUEIL */
-.img_acc{
-    width: 100%;
-    height: 85ex;
-    position: absolute;
-    z-index: -1;
-    -webkit-mask-image:-webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,1)), to(rgba(0,0,0,0)));
-    mask-image: linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0));
-}
-
-
-/* TITRE ET SOUS-TITRE PRINCIPAL */
-h1{
-  font-size: 7.5ex;
-  margin-top: -1ex;
-  margin-left: 20ex;
-}
-
-h2{
-  font-size: 3ex;
-  margin-top: -12ex;
-  margin-left: 57.5ex;
-}
-
-h1, h2{
-    font-family: 'league_spartan';
-    z-index: 1;
-    padding: 2ex;
 }
 
 
@@ -226,36 +201,121 @@ a:hover{
 }
 
 
+/* IMAGE D'ACCUEIL */
+.img_acc{
+  width: 100%;
+  height: 110ex;
+  position: absolute;
+  z-index: -1;
+  -webkit-mask-image:-webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,1)), to(rgba(0,0,0,0)));
+  mask-image: linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0));
+}
+
+@media screen and (max-height:800px){
+  .img_acc{
+    width: 100%;
+    height: 85ex;
+    position: absolute;
+    z-index: -1;
+    -webkit-mask-image:-webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,1)), to(rgba(0,0,0,0)));
+    mask-image: linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0));
+  }
+}
+
+
+/* TITRE ET SOUS-TITRE PRINCIPAL */
+h1{
+  font-size: 7.5ex;
+  margin-top: -1ex;
+  margin-left: 27.5ex;
+}
+
+h2{
+  font-size: 3ex;
+  margin-top: -11.5ex;
+  margin-left: 76.5ex;
+}
+
+h1, h2{
+    font-family: 'league_spartan';
+    z-index: 1;
+    padding: 2ex;
+}
+
+@media screen and (max-height:800px){
+  h1{
+  font-size: 7.5ex;
+  margin-top: -1ex;
+  margin-left: 20ex;
+  }
+
+  h2{
+    font-size: 3ex;
+    margin-top: -12ex;
+    margin-left: 57.5ex;
+  }
+
+  h1, h2{
+      font-family: 'league_spartan';
+      z-index: 1;
+      padding: 2ex;
+  }
+}
+
+
 /* PRÉSENTATION */
 #Presentation{
-  margin-top: 70ex;
+  margin-top: 97.5ex;
   height: 65ex;
 }
 
 #Presentation img{
   border-radius: 35px;
-  height: 60ex;
-  margin-left: 20ex;
+  height: 70ex;
+  margin-left: 30ex;
 }
 
 #Presentation article{
   width: 47ex;
-  margin-left: 70ex;
+  margin-left: 75ex;
   margin-top: -45ex;
-  font-size: 2.5ex;
+  font-size: 3ex;
   line-height: 2.75ex;
+}  
+
+@media screen and (max-height:800px){
+  #Presentation{
+    margin-top: 70ex;
+    height: 65ex;
+  }
+  
+  #Presentation img{
+    border-radius: 35px;
+    height: 60ex;
+    margin-left: 20ex;
+  }
+  
+  #Presentation article{
+    width: 47ex;
+    margin-left: 70ex;
+    margin-top: -45ex;
+    font-size: 2.5ex;
+    line-height: 2.75ex;
+  }  
 }
 
 
 /* BACHELOR UNIVERSITAIRE TECHNOLOGIQUE */
 .BUT h3{
   color: #f80040;
-  margin-left: 79ex;
+  margin-left: 75ex;
+  font-size: 3ex;
 }
 
 .BUT .date{
-  margin-left: 92.3ex;
+  margin-left: 112.75ex;
   margin-top: -2ex;
+  font-size: 2ex;
 }
 
 .BUT ul{
@@ -263,27 +323,57 @@ a:hover{
 }
 
 .BUT li{
-  margin-left: 85ex;
-  font-size: 2ex;
+  margin-left: 90ex;
+  font-size: 2.5ex;
 }
 
 .BUT .place{
-  margin-left: 115.5ex;
+  margin-left: 153ex;
   margin-top: -1ex;
   color: #f80040;
   font-size: 2ex
 }
 
 
+@media screen and (max-height:800px){
+  .BUT h3{
+    color: #f80040;
+    margin-left: 79ex;
+  }
+  
+  .BUT .date{
+    margin-left: 92.3ex;
+    margin-top: -2ex;
+  }
+  
+  .BUT ul{
+    margin-top: -1.75ex;
+  }
+  
+  .BUT li{
+    margin-left: 85ex;
+    font-size: 2ex;
+  }
+  
+  .BUT .place{
+    margin-left: 115.5ex;
+    margin-top: -1ex;
+    color: #f80040;
+    font-size: 2ex
+  }
+}
+
 /* BACCALAURÉAT */
 .BAC h3{
   color: #f80040;
-  margin-left: 79ex;
+  margin-left: 75ex;
+  font-size: 3ex;
 }
 
 .BAC .date{
-  margin-left: 92.3ex;
+  margin-left: 112.75ex;
   margin-top: -2ex;
+  font-size: 2ex;
 }
 
 .BAC ul{
@@ -291,22 +381,57 @@ a:hover{
 }
 
 .BAC li{
-  margin-left: 85ex;
-  font-size: 2ex;
+  margin-left: 90ex;
   width: 40ex;
+  font-size: 2.5ex;
 }
 
 .BAC .place{
-  margin-left: 102.5ex;
+  margin-left: 140ex;
   margin-top: -1ex;
   color: #f80040;
   font-size: 2ex
 }
 
+@media screen and (max-height:800px){
+  .BAC h3{
+    color: #f80040;
+    margin-left: 79ex;
+  }
+  
+  .BAC .date{
+    margin-left: 92.3ex;
+    margin-top: -2ex;
+  }
+  
+  .BAC ul{
+    margin-top: -1.75ex;
+  }
+  
+  .BAC li{
+    margin-left: 85ex;
+    font-size: 2ex;
+    width: 40ex;
+  }
+  
+  .BAC .place{
+    margin-left: 102.5ex;
+    margin-top: -1ex;
+    color: #f80040;
+    font-size: 2ex
+  }
+}
+
 
 /* COMPÉTENCES */
 #Competences{
-  margin-top: 5ex;
+  margin-top: 20ex;
+}
+
+@media screen and (max-height:800px){
+  #Competences{
+    margin-top: 5ex;
+  }
 }
 
 
@@ -315,7 +440,7 @@ a:hover{
   width: 60ex;
   display: inline-flex;
   flex-wrap: wrap;
-  margin-left: 20ex;
+  margin-left: 45ex;
 }
 
 .devLogiciel h3{
@@ -362,6 +487,15 @@ a:hover{
 .pythonIco{
   height: 3.5ex;
   margin-top: .5ex;
+}
+
+@media screen and (max-height:800px){
+  .devLogiciel{
+    width: 60ex;
+    display: inline-flex;
+    flex-wrap: wrap;
+    margin-left: 20ex;
+  }
 }
 
 
@@ -421,7 +555,7 @@ a:hover{
   width: 60ex;
   display: flex;
   flex-wrap: wrap;
-  margin-left: 57.5ex;
+  margin-left: 82.5ex;
 }
 
 .bdd h3{
@@ -466,108 +600,226 @@ a:hover{
   margin-left: 3.5ex;
 }
 
+@media screen and (max-height:800px){
+  .bdd{
+    width: 60ex;
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 57.5ex;
+  }
+}
+
 
 /* PROJETS */
 #Projets{
-  margin-top: 5ex;
+  margin-top: 12.5ex;
   margin-left: auto;
   margin-right: auto;
   width: 75%;
+}
+
+@media screen and (max-height:800px) {
+  #Projets{
+    margin-top: 5ex;
+    margin-left: auto;
+    margin-right: auto;
+    width: 75%;
+  }
 }
 
 
 /* SITE PERSONNEL */
 .sitePerso img{
   border-radius: 15px;
+  height: 50ex;
 }
 
 .sitePerso h3{
-  font-size: 3ex;
-  margin-left: 50ex;
-  margin-top: -22.5ex;
+  font-size: 4ex;
+  margin-left: 47.5ex;
+  margin-top: -21ex;
   color: #f80040;
 }
 
 .sitePerso article{
-  margin-left: 60ex;
-  font-size: 2.5ex;
+  margin-left: 63ex;
+  font-size: 3ex;
+  margin-top: -1.5ex;
 }
 
 .sitePerso h4{
-  margin-left: 60ex;
-  font-size: 2.5ex;
+  margin-left: 63ex;
+  font-size: 3ex;
   color: #f80040;
 }
 
 .sitePerso p{
-  margin-left: 67.5ex;
-  font-size: 2.5ex;
+  margin-left: 70.5ex;
+  font-size: 3ex;
   margin-top: -5ex;
+}
+
+@media screen and (max-height:800px){
+  .sitePerso img{
+    border-radius: 15px;
+    height: auto;
+  }
+  
+  .sitePerso h3{
+    font-size: 3ex;
+    margin-left: 50ex;
+    margin-top: -22.5ex;
+    color: #f80040;
+  }
+
+  .sitePerso article{
+    margin-left: 60ex;
+    font-size: 2.5ex;
+  }
+
+  .sitePerso h4{
+    margin-left: 60ex;
+    font-size: 2.5ex;
+    color: #f80040;
+  }
+  
+  .sitePerso p{
+    margin-left: 67.5ex;
+    font-size: 2.5ex;
+    margin-top: -5ex;
+  }
 }
 
 
 /* GESTION DE COUPLE DE PARENTHÈSES */
 .parenthesePy{
-  margin-top: 15ex;
-  margin-bottom: 15ex;
+  margin-top: 35ex;
+  margin-bottom: 35ex;
 }
 
 .parenthesePy img{
   border-radius: 15px;
-  margin-left: 75ex;
+  margin-left: 95ex;
+  height: 50ex;
 }
 
 .parenthesePy h3{
-  font-size: 3ex;
-  margin-top: -21ex;
+  font-size: 3.5ex;
+  margin-top: -25ex;
   color: #f80040;
 }
 
 .parenthesePy article{
-  font-size: 2.5ex;
+  font-size: 3ex;
   width: 45ex;
 }
 
 .parenthesePy h4{
-  font-size: 2.5ex;
+  font-size: 3ex;
   color: #f80040;
 }
 
 .parenthesePy p{
   margin-left: 7.5ex;
-  font-size: 2.5ex;
+  font-size: 3ex;
   margin-top: -5ex;
+}
+
+@media screen and (max-height:800px){
+  .parenthesePy{
+    margin-top: 15ex;
+    margin-bottom: 15ex;
+  }
+
+  .parenthesePy img{
+    border-radius: 15px;
+    margin-left: 75ex;
+  }
+  
+  .parenthesePy h3{
+    font-size: 3ex;
+    margin-top: -21ex;
+    color: #f80040;
+  }
+  
+  .parenthesePy article{
+    font-size: 2.5ex;
+    width: 45ex;
+  }
+  
+  .parenthesePy h4{
+    font-size: 2.5ex;
+    color: #f80040;
+  }
+  
+  .parenthesePy p{
+    margin-left: 7.5ex;
+    font-size: 2.5ex;
+    margin-top: -5ex;
+  }
 }
 
 
 /* JOB D'ÉTÉ */
 .jobEte img{
   border-radius: 15px;
-  height: 25ex;
+  height: 35ex;
 }
 
 .jobEte h3{
-  font-size: 3ex;
-  margin-left: 50ex;
+  font-size: 4ex;
+  margin-left: 47.5ex;
   margin-top: -20ex;
   color: #f80040;
 }
 
 .jobEte article{
-  margin-left: 60ex;
-  font-size: 2.5ex;
+  margin-left: 63ex;
+  font-size: 3ex;
+  margin-top: -1.5ex;
 }
 
 .jobEte h4{
-  margin-left: 60ex;
-  font-size: 2.5ex;
+  margin-left: 63ex;
+  font-size: 3ex;
   color: #f80040;
 }
 
 .jobEte p{
-  margin-left: 67.5ex;
-  font-size: 2.5ex;
+  margin-left: 70.5ex;
+  font-size: 3ex;
   margin-top: -5ex;
+}
+
+@media screen and (max-height:800px){
+  .jobEte img{
+    border-radius: 15px;
+    height: 25ex;
+  }
+  
+  .jobEte h3{
+    font-size: 3ex;
+    margin-left: 50ex;
+    margin-top: -20ex;
+    color: #f80040;
+  }
+  
+  .jobEte article{
+    margin-left: 60ex;
+    font-size: 2.5ex;
+  }
+  
+  .jobEte h4{
+    margin-left: 60ex;
+    font-size: 2.5ex;
+    color: #f80040;
+  }
+  
+  .jobEte p{
+    margin-left: 67.5ex;
+    font-size: 2.5ex;
+    margin-top: -5ex;
+  }
 }
 
 
@@ -583,16 +835,16 @@ footer{
 }
 
 .gmailIco{
-  height: 5ex;
+  height: 6ex;
   margin-left: 20ex;
 }
 
 .gmailIco + a{
   display: block;
-  font-size: 2.5ex;
+  font-size: 3ex;
   color: white;
   text-decoration: none;
-  margin-left: 22.5ex;
+  margin-left: 20ex;
   margin-top: -3.5ex;
 }
 
@@ -600,6 +852,21 @@ footer{
   color: tomato;
 }
 
+@media screen and (max-height:800px){
+  .gmailIco{
+    height: 5ex;
+    margin-left: 20ex;
+  }
+  
+  .gmailIco + a{
+    display: block;
+    font-size: 2.5ex;
+    color: white;
+    text-decoration: none;
+    margin-left: 22.5ex;
+    margin-top: -3.5ex;
+  }
+}
 
 /* LINKEDIN */
 .linkedin{
@@ -607,24 +874,38 @@ footer{
 }
 
 .linkedinIco{
-  height: 5ex;
-  margin-left: 20ex;
+  height: 6ex;
+  margin-left: 30ex;
 }
 
 .linkedinIco + a{
   display: block;
-  font-size: 2.5ex;
+  font-size: 3ex;
   color: white;
   text-decoration: none;
-  margin-left: 15ex;
   margin-top: -3.5ex;
-  margin-left: 20ex;
+  margin-left: 23.5ex;
 }
 
 .linkedinIco + a:hover{
   color: tomato;
 }
 
+@media screen and (max-height:800px){
+  .linkedinIco{
+    height: 5ex;
+    margin-left: 20ex;
+  }
+  
+  .linkedinIco + a{
+    display: block;
+    font-size: 2.5ex;
+    color: white;
+    text-decoration: none;
+    margin-top: -3.5ex;
+    margin-left: 20ex;
+  }
+}
 
 /* CV */
 .cv{
@@ -632,20 +913,36 @@ footer{
 }
 
 .cvIco{
-  height: 5ex;
-  margin-left: 25ex;
+  height: 6ex;
+  margin-left: 35ex;
 }
 
 .cvIco + a{
   display: block;
-  font-size: 2.5ex;
+  font-size: 3ex;
   color: white;
   text-decoration: none;
-  margin-left: 15ex;
   margin-top: -3.5ex;
-  margin-left: 25ex;
+  margin-left: 27.5ex;
 }
 
 .cvIco + a:hover{
   color: tomato;
+}
+
+@media screen and (max-height:800px){
+  .cvIco{
+    height: 5ex;
+    margin-left: 25ex;
+  }
+  
+  .cvIco + a{
+    display: block;
+    font-size: 2.5ex;
+    color: white;
+    text-decoration: none;
+    margin-left: 15ex;
+    margin-top: -3.5ex;
+    margin-left: 25ex;
+  }
 }
