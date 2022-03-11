@@ -1,0 +1,622 @@
+html{
+  scroll-behavior: smooth;
+}
+
+@font-face{
+  font-family: 'league_spartan';
+  src: url('Fonts/LeagueSpartan/leaguespartan.woff2') format('woff2'),
+       url('Fonts/LeagueSpartan/leaguespartan.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face{
+  font-family: 'roboto_condensed';
+  src: url('Fonts/RobotoCondensed/robotocondensed.woff2') format('woff2'),
+       url('Fonts/RobotoCondensed/robotocondensed.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body{
+  margin: 0;
+  color: black;
+  background-color: white;
+  font-family: 'roboto_condensed';
+  overflow-x: hidden;
+}
+
+*{
+  scrollbar-width: 2ex;
+  scrollbar-color: black white;
+}
+
+*::-webkit-scrollbar{
+  width: 12px;
+}
+
+*::-webkit-scrollbar-track{
+  background: white;
+}
+
+*::-webkit-scrollbar-thumb{
+  background-color: black;
+  border-radius: 20px;
+}
+
+.header{
+  display: flex;
+  top: 0;
+  width: 100%;
+  position: sticky;
+  background-color: white;
+  height: 5em;
+  background-size: cover;
+  align-items: center;
+}
+
+.name{
+  text-decoration: none;
+  font-family: "league_spartan";
+  color: black;
+  font-size: 3.5ex;
+  margin-left: 2ex;
+}
+
+.linkedin{
+  margin-left: 40ex;
+}
+
+.nav{
+  padding: 0;
+  margin-left: 5ex;
+}
+
+.nav li{
+  display: inline-block;
+  font-size: 1.5em;
+  margin-left: 5ex;
+  text-decoration: none;
+  color: black;
+}
+
+.img_acc{
+  width: 100%;
+  height: 85ex;
+  position: absolute;
+  z-index: -1;
+  -webkit-mask-image:-webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,1)), to(rgba(0,0,0,0)));
+  mask-image: linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0));
+}
+
+h1{
+  font-size: 7.5ex;
+  margin-top: -1ex;
+  margin-left: 20ex;
+}
+
+h2{
+  font-size: 3ex;
+  margin-top: -12ex;
+  margin-left: 57.5ex;
+}
+
+h1, h2{
+  font-family: 'league_spartan';
+  z-index: 1;
+  padding: 2ex;
+}
+
+.Parameters{
+  text-decoration: none;
+  color: black; 
+  transition: color 0.3s ease;
+}
+
+a:hover{
+  color: tomato;
+}
+
+#menuToggle{
+  display: block;
+  position: absolute;
+  top: 50px;
+  right: 50px;
+  z-index: 1; 
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+#menuToggle input{
+  display: block;
+  width: 40px;
+  height: 32px;
+  position: absolute;
+  top: -2.75ex;
+  left: -5px;
+  cursor: pointer;
+  opacity: 0;
+  z-index: 2;
+  -webkit-touch-callout: none;
+}
+
+#menuToggle span{
+  display: block;
+  top: -1.75ex;
+  margin-bottom: -0.5ex;
+  height: 3ex;
+  font-size: 5ex;
+  position: relative;
+  z-index: 1;
+  transform-origin: 4px 0px;
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              opacity 0.55s ease;
+}
+
+#menuToggle span:first-child{
+  transform-origin: 0% 0%;
+}
+
+#menuToggle span:nth-last-child(2){
+  transform-origin: 0% 100%;
+}
+
+#menuToggle input:checked ~ span{
+  opacity: 1;
+}
+
+#menuToggle input:checked ~ span:nth-last-child(3){
+  opacity: 0;
+}
+
+#menuToggle input:checked ~ span:nth-last-child(2){
+  opacity: 1;
+}
+
+#menu{
+  position: absolute;
+  width: 25ex;
+  margin: -15ex 0 0 0;
+  padding: 2.5ex;
+  padding-top: 10ex;
+  right: -100px;
+  background: white;
+  list-style-type: none;
+  -webkit-font-smoothing: antialiased;
+  transform-origin: 0% 0%;
+  transform: translate(100%, 0); 
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+  border: .5ex solid black;
+  border-bottom-left-radius: 25%;
+  border-bottom-right-radius: 25%;
+}
+
+#menu li{
+  padding: 10px 0;
+  font-size: 22px;
+}
+
+#menuToggle input:checked ~ ul{
+  transform: none;
+  opacity: 1;
+}
+
+@media screen and (max-width: 768px) {
+  #menu {
+    transform: none;
+    opacity: 0;
+    transition: opacity 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+  }
+}
+
+#Presentation{
+  color: #150941;
+  margin-top: 70ex;
+  height: 65ex;
+}
+
+#Presentation img{
+  border-radius: 35px;
+  height: 60ex;
+  margin-left: 20ex;
+}
+
+#Presentation article{
+  width: 47ex;
+  margin-left: 70ex;
+  margin-top: -45ex;
+  font-size: 2.5ex;
+  line-height: 2.75ex;
+}
+
+.BUT h3{
+  color: #f80040;
+  margin-left: 79ex;
+}
+
+.BUT .date{
+  margin-left: 92.3ex;
+  margin-top: -2ex;
+}
+
+.BUT ul{
+  margin-top: -1.75ex;
+}
+
+.BUT li{
+  margin-left: 85ex;
+  font-size: 2ex;
+}
+
+.BUT .place{
+  margin-left: 115.5ex;
+  margin-top: -1ex;
+  color: #f80040;
+  font-size: 2ex
+}
+
+.BAC h3{
+  color: #f80040;
+  margin-left: 79ex;
+}
+
+.BAC .date{
+  margin-left: 92.3ex;
+  margin-top: -2ex;
+}
+
+.BAC ul{
+  margin-top: -1.75ex;
+}
+
+.BAC li{
+  margin-left: 85ex;
+  font-size: 2ex;
+  width: 40ex;
+}
+
+.BAC .place{
+  margin-left: 102.5ex;
+  margin-top: -1ex;
+  color: #f80040;
+  font-size: 2ex
+}
+
+#Competences{
+  margin-top: 5ex;
+}
+
+.devLogiciel{
+  width: 60ex;
+  display: inline-flex;
+  flex-wrap: wrap;
+  margin-left: 20ex;
+}
+
+.devLogiciel h3{
+  background-color: #bfbfc9;
+  font-size: 4ex;
+  font-family: 'league_spartan';
+  color: #f80040;
+  width: 30ex;
+  text-align: center;
+  border-top-left-radius: 7.5px;
+  border-top-right-radius: 7.5px;
+}
+
+.devLogiciel ul{
+  background-color: #bfbfc9;
+  list-style-type: none;
+  justify-content: center;
+  align-items: center;
+  width: 57.5ex;
+  height: 25ex;
+  margin-top: -3.5ex;
+  border-bottom-left-radius: 7.5px;
+  border-bottom-right-radius: 7.5px;
+  padding-top: 2ex;
+  padding-bottom: 2ex;
+}
+
+.devLogiciel li{
+  color: white;
+  font-size: 3.5ex;
+  margin-left: 3ex;
+}
+
+.javaIco{
+  height: 3.5ex;
+  margin-left: 3.5ex;
+}
+
+.cIco{
+  height: 3.5ex;
+  margin-left: 6ex;
+}
+
+.pythonIco{
+  height: 3.5ex;
+  margin-top: .5ex;
+}
+
+.devWeb{
+  width: 60ex;
+  display: inline-flex;
+  flex-wrap: wrap;
+  margin-left: 15ex;
+}
+
+.devWeb h3{
+  background-color: #bfbfc9;
+  font-size: 4ex;
+  font-family: 'league_spartan';
+  color: #f80040;
+  width: 30ex;
+  text-align: center;
+  border-top-left-radius: 7.5px;
+  border-top-right-radius: 7.5px;
+}
+
+.devWeb ul{
+  background-color: #bfbfc9;
+  list-style-type: none;
+  justify-content: center;
+  align-items: center;
+  width: 57.5ex;
+  height: 25ex;
+  margin-top: -3.5ex;
+  border-bottom-left-radius: 7.5px;
+  border-bottom-right-radius: 7.5px;
+  padding-top: 2ex;
+  padding-bottom: 2ex;
+}
+
+.devWeb li{
+  color: white;
+  font-size: 3.5ex;
+  margin-top: 1.5ex;
+  margin-left: 3ex;
+}
+
+.htmlIco{
+  height: 3.5ex;
+  margin-left: 3.5ex;
+}
+
+.cssIco{
+  height: 3.5ex;
+  margin-left: 5ex;
+}
+
+.bdd{
+  width: 60ex;
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: 57.5ex;
+}
+
+.bdd h3{
+  background-color: #bfbfc9;
+  font-size: 4ex;
+  font-family: 'league_spartan';
+  color: #f80040;
+  width: 30ex;
+  text-align: center;
+  border-top-left-radius: 7.5px;
+  border-top-right-radius: 7.5px;
+}
+
+.bdd ul{
+  background-color: #bfbfc9;
+  list-style-type: none;
+  justify-content: center;
+  align-items: center;
+  width: 57.5ex;
+  height: 25ex;
+  margin-top: -3.5ex;
+  border-bottom-left-radius: 7.5px;
+  border-bottom-right-radius: 7.5px;
+  padding-top: 2ex;
+  padding-bottom: 2ex;
+}
+
+.bdd li{
+  color: white;
+  font-size: 3.5ex;
+  margin-top: 1.5ex;
+  margin-left: 3ex;
+}
+
+.sqlIco{
+  height: 3.5ex;
+  margin-left: 3.5ex;
+}
+
+.umlIco{
+  height: 3.5ex;
+  margin-left: 3.5ex;
+}
+
+/* PROJETS */
+#Projets{
+  margin-top: 5ex;
+  margin-left: auto;
+  margin-right: auto;
+  width: 75%;
+}
+
+
+/* SITE PERSONNEL */
+.sitePerso img{
+  border-radius: 15px;
+}
+
+.sitePerso h3{
+  font-size: 3ex;
+  margin-left: 50ex;
+  margin-top: -22.5ex;
+  color: #f80040;
+}
+
+.sitePerso article{
+  margin-left: 60ex;
+  font-size: 2.5ex;
+}
+
+.sitePerso h4{
+  margin-left: 60ex;
+  font-size: 2.5ex;
+  color: #f80040;
+}
+
+.sitePerso p{
+  margin-left: 67.5ex;
+  font-size: 2.5ex;
+  margin-top: -5ex;
+}
+
+
+/* GESTION DE COUPLE DE PARENTHÈSES */
+.parenthesePy{
+  margin-top: 15ex;
+  margin-bottom: 15ex;
+}
+
+.parenthesePy img{
+  border-radius: 15px;
+  margin-left: 75ex;
+}
+
+.parenthesePy h3{
+  font-size: 3ex;
+  margin-top: -21ex;
+  color: #f80040;
+}
+
+.parenthesePy article{
+  font-size: 2.5ex;
+  width: 45ex;
+}
+
+.parenthesePy h4{
+  font-size: 2.5ex;
+  color: #f80040;
+}
+
+.parenthesePy p{
+  margin-left: 7.5ex;
+  font-size: 2.5ex;
+  margin-top: -5ex;
+}
+
+
+/* JOB D'ÉTÉ */
+.jobEte img{
+  border-radius: 15px;
+  height: 25ex;
+}
+
+.jobEte h3{
+  font-size: 3ex;
+  margin-left: 50ex;
+  margin-top: -20ex;
+  color: #f80040;
+}
+
+.jobEte article{
+  margin-left: 60ex;
+  font-size: 2.5ex;
+}
+
+.jobEte h4{
+  margin-left: 60ex;
+  font-size: 2.5ex;
+  color: #f80040;
+}
+
+.jobEte p{
+  margin-left: 67.5ex;
+  font-size: 2.5ex;
+  margin-top: -5ex;
+}
+
+
+/* FOOTER */
+footer{
+  margin-top: 15ex;
+}
+
+
+/* GMAIL */
+.gmail{
+  display: inline-block;
+}
+
+.gmailIco{
+  height: 5ex;
+  margin-left: 20ex;
+}
+
+.gmailIco + a{
+  display: block;
+  font-size: 2.5ex;
+  color: black;
+  text-decoration: none;
+  margin-left: 22.5ex;
+  margin-top: -3.5ex;
+}
+
+.gmailIco + a:hover{
+  color: tomato;
+}
+
+
+/* LINKEDIN */
+.linkedin{
+  display: inline-block;
+}
+
+.linkedinIco{
+  height: 5ex;
+  margin-left: -20ex;
+}
+
+.linkedinIco + a{
+  display: block;
+  font-size: 2.5ex;
+  color: black;
+  text-decoration: none;
+  margin-left: 15ex;
+  margin-top: -3.5ex;
+  margin-left: -10ex;
+}
+
+.linkedinIco + a:hover{
+  color: tomato;
+}
+
+
+/* CV */
+.cv{
+  display: inline-block;
+}
+
+.cvIco{
+  height: 5ex;
+  margin-left: 25ex;
+}
+
+.cvIco + a{
+  display: block;
+  font-size: 2.5ex;
+  color: black;
+  text-decoration: none;
+  margin-left: 15ex;
+  margin-top: -3.5ex;
+  margin-left: 25ex;
+}
+
+.cvIco + a:hover{
+  color: tomato;
+}
