@@ -74,6 +74,12 @@ body{
   margin-left: 2ex;
 }
 
+@media screen and (max-device-width:480px){
+  .name{
+    font-size: 3ex;
+  }
+}
+
 
 /* BARRE DE NAVIGATION */
 .nav{
@@ -86,6 +92,12 @@ body{
     padding: 0;
     margin-left: 5ex;
   } 
+}
+
+@media screen and (max-device-width:480px){
+  .nav{
+     display: none;
+  }
 }
 
 .nav li{
@@ -108,7 +120,7 @@ a:hover{
   color: tomato;
 }
 
-#menuToggle{
+.parameterMenu #menuToggle{
   display: block;
   position: absolute;
   top: 50px;
@@ -118,7 +130,7 @@ a:hover{
   user-select: none;
 }
 
-#menuToggle input{
+.parameterMenu #menuToggle input{
   display: block;
   width: 40px;
   height: 32px;
@@ -131,7 +143,7 @@ a:hover{
   -webkit-touch-callout: none;
 }
 
-#menuToggle span{
+.parameterMenu #menuToggle span{
   display: block;
   top: -1.75ex;
   margin-bottom: -0.5ex;
@@ -145,27 +157,27 @@ a:hover{
               opacity 0.55s ease;
 }
 
-#menuToggle span:first-child{
+.parameterMenu #menuToggle span:first-child{
   transform-origin: 0% 0%;
 }
 
-#menuToggle span:nth-last-child(2){
+.parameterMenu #menuToggle span:nth-last-child(2){
   transform-origin: 0% 100%;
 }
 
-#menuToggle input:checked ~ span{
+.parameterMenu #menuToggle input:checked ~ span{
   opacity: 1;
 }
 
-#menuToggle input:checked ~ span:nth-last-child(3){
+.parameterMenu #menuToggle input:checked ~ span:nth-last-child(3){
   opacity: 0;
 }
 
-#menuToggle input:checked ~ span:nth-last-child(2){
+.parameterMenu #menuToggle input:checked ~ span:nth-last-child(2){
   opacity: 1;
 }
 
-#menu{
+.parameterMenu #menu{
   position: absolute;
   width: 25ex;
   margin: -15ex 0 0 0;
@@ -183,21 +195,153 @@ a:hover{
   border-bottom-right-radius: 25%;
 }
 
-#menu li{
+.parameterMenu #menu li{
   padding: 10px 0;
   font-size: 22px;
 }
 
-#menuToggle input:checked ~ ul{
+.parameterMenu #menuToggle input:checked ~ ul{
   transform: none;
   opacity: 1;
 }
 
-@media screen and (max-width: 768px) {
-  #menu {
+@media screen and (max-device-width: 768px) {
+  .parameterMenu #menu {
     transform: none;
     opacity: 0;
     transition: opacity 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+  }
+}
+
+
+/* MENU RESPONSIVE */
+.respMenu{
+  display: none;
+}
+
+.respMenu a{
+  text-decoration: none;
+  color: black;
+  transition: color 0.3s ease;
+}
+
+.respMenu #menuToggle{
+  display: block;
+  position: absolute;
+  top: 50px;
+  right: 50px;
+  z-index: 1;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.respMenu #menuToggle input{
+  display: block;
+  width: 40px;
+  height: 32px;
+  position: absolute;
+  top: -7px;
+  left: -5px;
+  cursor: pointer;
+  opacity: 0;
+  z-index: 2;
+  -webkit-touch-callout: none;
+}
+
+.respMenu #menuToggle span{
+  display: block;
+  width: 32px;
+  height: 4px;
+  margin-bottom: 5px;
+  position: relative;
+  background: black;
+  border-radius: 3px;
+  z-index: 1;
+  transform-origin: 4px 0px;
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              opacity 0.55s ease;
+}
+
+.respMenu #menuToggle span:first-child{
+  transform-origin: 0% 0%;
+}
+
+.respMenu #menuToggle span:nth-last-child(2){
+  transform-origin: 0% 100%;
+}
+
+.respMenu #menuToggle input:checked ~ span{
+  opacity: 1;
+  transform: rotate(45deg) translate(-2px, -1px);
+  background: black;
+}
+
+.respMenu #menuToggle input:checked ~ span:nth-last-child(3){
+  opacity: 0;
+  transform: rotate(0deg) scale(0.2, 0.2);
+}
+
+.respMenu #menuToggle input:checked ~ span:nth-last-child(2){
+  opacity: 1;
+  transform: rotate(-45deg) translate(0, -1px);
+}
+
+.respMenu #menu{
+  position: fixed;
+  width: 55ex;
+  height: 88.5ex;
+  margin: -100px 0 0 0;
+  padding: 2.5ex;
+  padding-top: 17.5ex;
+  right: -12ex;
+  background: rgba(255,255,255,.97);
+  list-style-type: none;
+  -webkit-font-smoothing: antialiased;
+  transform-origin: 0% 0%;
+  transform: translate(100%, 0);
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+  border: .5ex solid black;
+  border-bottom-left-radius: 2ex;
+  border-bottom-right-radius: 2ex;
+  z-index: -1;
+}
+
+.respMenu #menu li{
+  padding: 10px 0;
+  font-size: 3ex;
+  margin-left: 7.5ex;
+}
+
+.respMenu #menu .Parameters{
+  margin-top: 7.5ex;
+}
+
+.respMenu #menuToggle input ~ ul{
+  display: none;
+}
+
+.respMenu #menuToggle input:checked ~ ul{
+  display: block;
+  transform: none;
+  opacity: 1;
+}
+
+@media screen and (max-width: 768px){
+  .respMenu #menu {
+    transform: none;
+    opacity: 0;
+    transition: opacity 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+  }
+}
+
+@media screen and (max-device-width:480px){
+  .parameterMenu{
+    display: none;
+  }
+  
+  .respMenu{
+    display: block;
   }
 }
 
@@ -220,6 +364,12 @@ a:hover{
     z-index: -1;
     -webkit-mask-image:-webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,1)), to(rgba(0,0,0,0)));
     mask-image: linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0));
+  }
+}
+
+@media screen and (max-device-width:480px){
+  .img_acc{
+    height: 40ex;
   }
 }
 
@@ -255,7 +405,7 @@ h2{
   margin-top: -4ex;
   margin-left: 34ex;
   font-size: 3em;
-  transform: rotate(-34.5deg);
+  transform: rotate(-30.5deg);
 }
 
 @media screen and (max-height:800px){
@@ -263,13 +413,10 @@ h2{
     width: 40ex;
     height: 20ex;
     margin-left: 77.5ex;
-    border: 5px solid black;
-    border-radius: 50%;
   }
   
   h1{
     font-family: 'league_spartan';
-    z-index: 1;
     width: 15.5ex;
     padding: 2ex;
     font-size: 3.8ex;
@@ -284,12 +431,34 @@ h2{
   }
   
   .arrow{
-    width: 1ex;
-    font-family: 'league_spartan';
-    margin-top: -5ex;
-    margin-left: 39.6ex;
-    font-size: 2em;
-    transform: rotate(-34.5deg);
+    font-size: 1.5em;
+    margin-top: -6.5ex;
+    margin-left: 52.75ex;
+    transform: rotate(-35deg);
+  }
+}
+
+@media screen and (max-device-width:480px){
+  .title{
+    margin-left: 22ex;
+    height: 7.5ex;
+    width: 15ex;
+    border-width: 2.5px;
+  }
+
+  h1{
+    font-size: 1.5ex;
+  }
+
+  h2{
+    font-size: 1ex;
+  }
+
+  .arrow{
+    font-size: 1.5ex;
+    margin-left: 28.25ex;
+    margin-top: -4.5ex;
+    transform: rotate(-35.5deg);
   }
 }
 
@@ -335,6 +504,28 @@ h2{
   }  
 }
 
+@media screen and (max-device-width:480px){
+  #Presentation{
+    margin-top: 40ex;
+    height: 100ex;
+  }
+  
+  #Presentation img{
+    border-radius: 35px;
+    height: 30ex;
+    margin-left: 8.5ex;
+  }
+  
+  #Presentation article{
+    width: 37.5ex;
+    margin-left: 5ex;
+    margin-top: 2.5ex;
+    font-size: 2ex;
+    line-height: 2.5ex;
+    text-align: left;
+  }  
+}
+
 
 /* BACHELOR UNIVERSITAIRE TECHNOLOGIQUE */
 .BUT h3{
@@ -358,22 +549,24 @@ h2{
   font-size: 2.5ex;
 }
 
+.BUT a{
+  text-decoration: none;
+}
+
 .BUT .place{
   margin-left: 153ex;
   margin-top: -1ex;
   color: #f80040;
-  font-size: 2ex
+  font-size: 2ex;
 }
-
 
 @media screen and (max-height:800px){
   .BUT h3{
-    color: #f80040;
-    margin-left: 79ex;
+    margin-left: 58.2ex;
   }
   
   .BUT .date{
-    margin-left: 92.3ex;
+    margin-left: 87.5ex;
     margin-top: -2ex;
   }
   
@@ -389,9 +582,36 @@ h2{
   .BUT .place{
     margin-left: 115.5ex;
     margin-top: -1ex;
-    color: #f80040;
     font-size: 2ex
   }
+}
+
+@media screen and (max-device-width:480px){
+  .BUT h3{
+    margin-left: 3.25ex;
+  }
+  
+  .BUT .date{
+    margin-left: 5ex;
+    margin-top: -3ex;
+  }
+  
+  .BUT ul{
+    margin-top: -1.75ex;
+    margin-left: -50ex;
+    font-size: 1.5ex;
+  }
+  
+  .BUT li{
+    margin-left: 50ex;
+    font-size: 2ex;
+  }
+  
+  .BUT .place{
+    margin-left: 25ex;
+    margin-top: -1ex;
+    font-size: 2ex
+  }  
 }
 
 /* BACCALAURÉAT */
@@ -417,6 +637,10 @@ h2{
   font-size: 2.5ex;
 }
 
+.BAC a{
+  text-decoration: none;
+}
+
 .BAC .place{
   margin-left: 140ex;
   margin-top: -1ex;
@@ -427,7 +651,7 @@ h2{
 @media screen and (max-height:800px){
   .BAC h3{
     color: #f80040;
-    margin-left: 79ex;
+    margin-left: 58.2ex;;
   }
   
   .BAC .date{
@@ -453,6 +677,34 @@ h2{
   }
 }
 
+@media screen and (max-device-width:480px){
+  .BAC h3{
+    margin-left: 3.25ex;
+  }
+  
+  .BAC .date{
+    margin-left: 5ex;
+    margin-top: -3ex;
+  }
+  
+  .BAC ul{
+    margin-top: -1.75ex;
+    margin-left: -50ex;
+    font-size: 1.5ex;
+  }
+  
+  .BAC li{
+    margin-left: 50ex;
+    font-size: 2ex;
+  }
+  
+  .BAC .place{
+    margin-left: 11.5ex;
+    margin-top: -1ex;
+    font-size: 2ex
+  }  
+}
+
 
 /* COMPÉTENCES */
 #Competences{
@@ -462,6 +714,13 @@ h2{
 @media screen and (max-height:800px){
   #Competences{
     margin-top: 5ex;
+  }
+}
+
+@media screen and (max-device-width:480px){
+  #Competences{
+    margin-top: -25ex;
+    margin-left: -15ex;
   }
 }
 
@@ -529,6 +788,29 @@ h2{
   }
 }
 
+@media screen and (max-device-width:480px){
+  .devLogiciel{
+    width: 30ex;
+    height: 20ex;
+    margin-left: 25ex;
+    margin-top: 15ex;
+  }
+
+  .devLogiciel h3{
+    font-size: 2.5ex;
+    height: 7.5ex;
+  }
+  
+  .devLogiciel ul{
+    padding-top: 4ex;
+    padding-bottom: 0ex;
+  }
+
+  .devLogiciel li{
+    font-size: 2.5ex
+  }
+}
+
 
 /* DÉVELOPPEMENT WEB */
 .devWeb{
@@ -578,6 +860,30 @@ h2{
 .cssIco{
   height: 3.5ex;
   margin-left: 5ex;
+}
+
+@media screen and (max-device-width:480px){
+  .devWeb{
+    width: 30ex;
+    height: 30ex;
+    margin-left: 25ex;
+    margin-top: 25ex;
+  }
+
+  .devWeb h3{
+    font-size: 2.5ex;
+    height: 7.5ex;
+    word-spacing: 8ex;
+  }
+
+  .devWeb ul{
+    padding-top: 4ex;
+    padding-bottom: 0ex;
+  }
+
+  .devWeb li{
+    font-size: 2.5ex
+  }
 }
 
 
@@ -640,6 +946,29 @@ h2{
   }
 }
 
+@media screen and (max-device-width:480px){
+  .bdd{
+    width: 30ex;
+    height: 30ex;
+    margin-left: 25ex;
+    margin-top: 15ex;
+  }
+
+  .bdd h3{
+    font-size: 2.5ex;
+    height: 7.5ex;
+  }
+
+  .bdd ul{
+    padding-top: 4ex;
+    padding-bottom: 0ex;
+  }
+
+  .bdd li{
+    font-size: 2.5ex
+  }
+}
+
 
 /* PROJETS */
 #Projets{
@@ -652,13 +981,19 @@ h2{
 @media screen and (max-height:800px) {
   #Projets{
     margin-top: 5ex;
-    margin-left: auto;
+    margin-left: 10ex;
     margin-right: auto;
     width: 75%;
   }
 }
 
-
+@media screen and (max-device-width:480px){
+  #Projets{
+    margin-top: 20ex;
+    margin-left: 2.5ex;
+    width: 44.5ex;
+  }
+}
 
 /* SITE PERSONNEL */
 .sitePerso img{
@@ -719,6 +1054,39 @@ h2{
     margin-left: 67.5ex;
     font-size: 2.5ex;
     margin-top: -5ex;
+  }
+}
+
+@media screen and (max-device-width:480px){
+  .sitePerso{
+    width: 44.5ex;
+  }
+
+  .sitePerso img{
+    height: 25ex;
+  }
+
+  .sitePerso h3{
+    margin-left: 6.5ex;
+    margin-top: 1ex;
+    font-size: 3ex;
+  }
+
+  .sitePerso article{
+    margin-left: 1ex;
+    font-size: 2.5ex;
+  }
+
+  .sitePerso h4{
+    margin-left: 1ex;
+    font-size: 2.5ex;
+    color: #f80040;
+  }
+
+  .sitePerso p{
+    margin-left: 10ex;
+    font-size: 2ex;
+    margin-top: -6ex;
   }
 }
 
@@ -791,6 +1159,42 @@ h2{
   }
 }
 
+@media screen and (max-device-width:480px){
+  .parenthesePy{
+    width: 44.5ex;
+    margin-top: 5ex;
+  }
+
+  .parenthesePy img{
+    height: 25ex;
+    margin-left: 0ex;
+  }
+
+  .parenthesePy h3{
+    margin-left: 1ex;
+    margin-top: 1ex;
+    font-size: 3ex;
+  }
+
+  .parenthesePy article{
+    margin-left: 1ex;
+    font-size: 2.5ex;
+    width: 32.5ex;
+  }
+
+  .parenthesePy h4{
+    margin-left: 1ex;
+    font-size: 2.5ex;
+    color: #f80040;
+  }
+
+  .parenthesePy p{
+    margin-left: 10ex;
+    font-size: 2ex;
+    margin-top: -6ex;
+  }
+}
+
 
 /* JOB D'ÉTÉ */
 .jobEte img{
@@ -854,52 +1258,54 @@ h2{
   }
 }
 
+@media screen and (max-device-width:480px){
+  .jobEte{
+    width: 44.5ex;
+    margin-top: -13ex;
+  }
+
+  .jobEte img{
+    height: 20ex;
+    margin-left: 4.5ex;
+  }
+
+  .jobEte h3{
+    margin-left: 0ex;
+    margin-top: 1ex;
+    font-size: 3ex;
+    text-align: center;
+  }
+
+  .jobEte article{
+    margin-left: 1ex;
+    font-size: 2.5ex;
+    width: 32.5ex;
+  }
+
+  .jobEte h4{
+    margin-left: 1ex;
+    font-size: 2.5ex;
+    color: #f80040;
+  }
+
+  .jobEte p{
+    margin-left: 10ex;
+    font-size: 2ex;
+    margin-top: -6ex;
+  }
+}
+
 
 /* FOOTER */
 footer{
   margin-top: 15ex;
 }
 
-
-/* GMAIL */
-.gmail{
-  display: inline-block;
-}
-
-.gmailIco{
-  height: 6ex;
-  margin-left: 20ex;
-}
-
-.gmailIco + a{
-  display: block;
-  font-size: 3ex;
-  color: black;
-  text-decoration: none;
-  margin-left: 20ex;
-  margin-top: -3.5ex;
-}
-
-.gmailIco + a:hover{
-  color: tomato;
-}
-
-@media screen and (max-height:800px){
-  .gmailIco{
-    height: 5ex;
-    margin-left: 20ex;
-  }
-  
-  .gmailIco + a{
-    display: block;
-    font-size: 2.5ex;
-    color: black;
-    text-decoration: none;
-    margin-left: 22.5ex;
-    margin-top: -3.5ex;
+@media screen and (max-device-width:480px){
+  footer{
+    margin-top: 5ex;
   }
 }
-
 
 /* LINKEDIN */
 .linkedin{
@@ -931,12 +1337,22 @@ footer{
   }
   
   .linkedinIco + a{
-    display: block;
     font-size: 2.5ex;
-    color: black;
-    text-decoration: none;
-    margin-top: -3.5ex;
     margin-left: 20ex;
+  }
+}
+
+@media screen and (max-device-width:480px){
+  .linkedinIco{
+    height: 2ex;
+    margin-left: 5ex;
+  }
+
+  .linkedinIco + a{
+    display: inline-block;
+    font-size: 1.5ex;
+    margin-left: 0ex;
+    margin-top: -10ex;
   }
 }
 
@@ -944,20 +1360,22 @@ footer{
 /* CV */
 .cv{
   display: inline-block;
+  width: 20ex;
+  margin-left: 115ex;
 }
 
 .cvIco{
   height: 6ex;
-  margin-left: 35ex;
 }
 
 .cvIco + a{
   display: block;
   font-size: 3ex;
-  color: black;
+  color: white;
   text-decoration: none;
   margin-top: -3.5ex;
-  margin-left: 27.5ex;
+  margin-left: 5ex;
+  width: 6.5ex;
 }
 
 .cvIco + a:hover{
@@ -965,18 +1383,32 @@ footer{
 }
 
 @media screen and (max-height:800px){
+  .cv{
+    margin-left: 92.5ex;
+  }
   .cvIco{
     height: 5ex;
-    margin-left: 25ex;
   }
   
   .cvIco + a{
-    display: block;
     font-size: 2.5ex;
-    color: black;
-    text-decoration: none;
-    margin-left: 15ex;
-    margin-top: -3.5ex;
-    margin-left: 25ex;
+    margin-left: 4.5ex;
+  }
+}
+
+@media screen and (max-device-width:480px){
+  .cv{
+    width: 8ex;
+    margin-left: 17.5ex;
+  }
+  .cvIco{
+    height: 2ex;
+  }
+
+  .cvIco + a{
+    display: inline-block;
+    font-size: 1.5ex;
+    margin-left: 0ex;
+    margin-top: -10ex;
   }
 }
