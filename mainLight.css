@@ -51,6 +51,12 @@ body{
   border-radius: 20px;
 }
 
+/* Links */
+a{
+  text-decoration: none;
+  color: white;
+}
+
 
 /* HEADER */
 .header{
@@ -688,6 +694,7 @@ h1, h2{
   }
 }
 
+
 /* DÉVELOPPEMENT LOGICIEL */
 .devLogiciel{
   width: 60ex;
@@ -697,7 +704,7 @@ h1, h2{
 }
 
 .devLogiciel h3{
-  background-color: #bfbfc9;
+  background-color: rgba(191, 191, 201, .75);;
   font-size: 4ex;
   font-family: 'league_spartan';
   color: #f80040;
@@ -707,8 +714,17 @@ h1, h2{
   border-top-right-radius: 7.5px;
 }
 
+.devLogiciel h3 + img{
+  z-index: -1;
+  position: absolute;
+  margin-top: 4ex;
+  width: 60ex;
+  height: 35.75ex;
+  border-radius: 7.5px;
+}
+
 .devLogiciel ul{
-  background-color: #bfbfc9;
+  background-color: rgba(191, 191, 201, .75);
   list-style-type: none;
   justify-content: center;
   align-items: center;
@@ -763,6 +779,12 @@ h1, h2{
     font-size: 2.5ex;
     height: 7.5ex;
   }
+
+  .devLogiciel h3 + img{
+    width: 30ex;
+    height: 37.5ex;
+    margin-top: 2.5ex;
+  }
   
   .devLogiciel ul{
     padding-top: 4ex;
@@ -784,7 +806,7 @@ h1, h2{
 }
 
 .devWeb h3{
-  background-color: #bfbfc9;
+  background-color: rgba(191, 191, 201, .85);
   font-size: 4ex;
   font-family: 'league_spartan';
   color: #f80040;
@@ -794,8 +816,17 @@ h1, h2{
   border-top-right-radius: 7.5px;
 }
 
+.devWeb h3 + img{
+  z-index: -1;
+  position: absolute;
+  margin-top: 4ex;
+  width: 60ex;
+  height: 35.75ex;
+  border-radius: 7.5px;
+}
+
 .devWeb ul{
-  background-color: #bfbfc9;
+  background-color: rgba(191, 191, 201, .85);
   list-style-type: none;
   justify-content: center;
   align-items: center;
@@ -839,6 +870,12 @@ h1, h2{
     word-spacing: 8ex;
   }
 
+  .devWeb h3 + img{
+    width: 30ex;
+    height: 37.5ex;
+    margin-top: 2.5ex;
+  }
+
   .devWeb ul{
     padding-top: 4ex;
     padding-bottom: 0ex;
@@ -859,7 +896,7 @@ h1, h2{
 }
 
 .bdd h3{
-  background-color: #bfbfc9;
+  background-color: rgba(191, 191, 201, .75);
   font-size: 4ex;
   font-family: 'league_spartan';
   color: #f80040;
@@ -869,8 +906,17 @@ h1, h2{
   border-top-right-radius: 7.5px;
 }
 
+.bdd h3 + img{
+  z-index: -1;
+  position: absolute;
+  margin-top: 4ex;
+  width: 60ex;
+  height: 35.75ex;
+  border-radius: 7.5px;
+}
+
 .bdd ul{
-  background-color: #bfbfc9;
+  background-color: rgba(191, 191, 201, .75);
   list-style-type: none;
   justify-content: center;
   align-items: center;
@@ -920,6 +966,12 @@ h1, h2{
   .bdd h3{
     font-size: 2.5ex;
     height: 7.5ex;
+  }
+
+  .bdd h3 + img{
+    width: 30ex;
+    height: 37.5ex;
+    margin-top: 2.5ex;
   }
 
   .bdd ul{
@@ -1337,7 +1389,7 @@ footer{
 .cvIco + a{
   display: block;
   font-size: 3ex;
-  color: white;
+  color: black;
   text-decoration: none;
   margin-top: -3.5ex;
   margin-left: 5ex;
